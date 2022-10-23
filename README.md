@@ -14,8 +14,10 @@ struct node
 };
 
 void insert_term(struct node **, int, int);
+
 void traverse(struct node *);
 void poly_add(struct node **, struct node **, struct node **);
+
 void poly_mul(struct node **, struct node **, struct node **);
 
 void main()
@@ -60,6 +62,7 @@ void main()
   getch();
 }
 void insert_term(struct node **start, int c, int e)
+
 {
   struct node *temp, *temp1, *prev;
   if (*start == NULL)
@@ -158,6 +161,7 @@ void traverse(struct node *start)
 }
 
 void poly_add(struct node **start_p, struct node **start_q, struct node **start_r)
+
 {
   int c, e;
   struct node *pptr, *qptr;
@@ -215,6 +219,7 @@ void poly_add(struct node **start_p, struct node **start_q, struct node **start_
 
 void poly_mul(struct node **start_p, struct node **start_q, struct node **start_r)
 {
+
   int c, e;
   struct node *pptr, *qptr;
   *start_r = NULL;
@@ -234,7 +239,9 @@ void poly_mul(struct node **start_p, struct node **start_q, struct node **start_
         insert_term(start_r, c, e);
         qptr = qptr->next;
       }
+      
       pptr = pptr->next;
+      
     }
   }
 }
